@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> AppShape </title>
+        <style>
+
+            body{
+               font-family: Arial, Helvetica, sans-serif;
+                background-image: linear-gradient(90deg,gray, gray)
+            }
+            div.login{
+                background-color: #e3ff00;
+                position: absolute;
+                left: 10%;
+                padding: 25px 100px 150px 50px;                
+                color: black;
+                
+                
+            }
+            div.image_login{
+                position: absolute;
+                left: 45%;
+                
+            }
+            input{
+
+                padding: 15px;
+                border: none;
+                outline: none;
+                font-size: 18px;
+                border-radius: 10px;
+            }
+            input[type="submit"] {
+                 width: 80px;
+                 background-color: dodgerblue;
+                 color: white;
+                 cursor: pointer;
+
+            }
+            input[type="submit"]:hover{
+                background-color: deepskyblue;
+            }
+
+            h1{
+                font-size: 73px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                top:7%
+                
+            }
+           
+
+        </style>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+       
+
+        <div class="login">
+            <h1><b>AppShape</b></h1><br>  
+            <form>          
+            <h2><b>Login</b></h2>
+            
+            <input type="text" placeholder="E-mail" id="login"><br><br>
+            <input type="password" placeholder="Senha" id="senha"><br><br>
+            <input type="submit" placeholder = "Enviar" onclick="logar(); return false">
+            <br>
+
+            </form>
+
+        </div>
+        
+        <div class="image_login">
+
+            <img src="imagens/peso.png" width="635"  border-radius="15px">
+        </div>
+       <script>
+
+        function logar(){
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+
+            if(login =="admin" && senha=="admin"){
+                
+                location.href = "home.html";
+            }else{
+
+                alert('Usuário ou senha incorretos!')
+            }
+
+        }
+       </script>
+                
+            
+
+  
+        
+        
+
+    </body>
+
+
+</html>

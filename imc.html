@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+    <head>
+        <title>Dados IMC</title>
+        <script type="text/javascript">
+        
+            function calcular(){
+                // pegando o id do formulario
+                var formulario = document.getElementById("formulario");	
+                
+                // kilos é minha variavel
+                // formulario é o id do meu formulario
+                // value é o valor do input
+                // o + na frente transforma em number a string	
+                    
+                var kilos  		= +formulario.kilos.value;
+                var centimetros = +formulario.centimetros.value;
+                
+                 // altura
+                var altura = (centimetros) / 100;
+                 
+                // imc
+                var imc = kilos / (altura * altura);
+                
+                // o metodo toFixed fixa apenas duas casas decimais apos o ponto.
+                formulario.imc.value = imc.toFixed(2);
+                
+                if(imc < 18.5)
+                {
+                    alert('Você esta abaixo do peso!');
+                } 
+                else if(imc >=18.5 && imc <= 24.99)
+                {
+                    alert("Peso Ideal");
+                }
+                else if(imc >24.99 && imc < 30)
+                {
+                    alert("Sobrepeso");
+                }
+                else if(imc >= 30 && imc < 35)
+                {
+                    alert("Obesidade Moderada");
+                }
+                else if(imc >= 35 && imc < 40)
+                {
+                    alert("Obesidade Severa");
+                }
+                else if(imc >= 40)
+                {
+                    alert("Obesidade Mórbida");
+                }
+                
+            }
+            
+            </script>
+            <style>
+                body{
+				background-image: linear-gradient(90deg,cyan,#eff004);
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 35px;
+			}
+        
+            a:link {
+                text-decoration: none;
+                }
+			 div.imc{
+				background-color: black;
+				position:absolute;
+				left:25%;
+				padding: 10px;
+				top:15%;
+				color:white;
+				border-radius: 15px;
+                padding: 60px;
+			 }
+			 input{
+				border-radius: 10px;
+				padding: 15px;
+				width: 500px;
+				outline: none;
+			 }
+           
+			 label{
+				width: 25px;
+			 }
+
+                div.titulo{
+
+                        position: relative;                
+                        background-color: black;
+                        color: white;
+                        border-radius: 10px;
+                        right: 10px ;
+                        top: 1%;
+                        margin: 10px 40px;
+                        padding: 0 0 0 25px;
+            
+                    }
+                    h1{
+                        font-size: 35px;
+                    }
+                    body{
+                        font-family: Arial, Helvetica, sans-serif;
+                        background-image: linear-gradient(90deg,cyan,#e3ff00)
+                    }
+                    label{
+                        font-size: 30px;
+                    }
+                    input{
+                        font-size: 20px;
+                    }
+
+            </style>
+            <meta charset="utf-8">
+
+    </head>
+    <body>
+        <div class="titulo">
+            <h1><b>AppShape</b></h1>
+            
+        </div>      
+        <div class='imc'>
+            <div id="containerForm">
+            <form id="formulario">
+                
+           
+                <legend><b>Cálculo Índice de Massa Corporal</b></legend><br>
+        
+                
+                <input name="centimetros" placeholder="Altura em centímetros" type="text"/><br>
+                
+                <input name="kilos" placeholder="Peso em quilogramas" type="text" /><br>    
+        
+                <input name="idade" type="text" placeholder="Idade em anos" /><br>    
+        
+        
+        
+                
+                <input name="imc" type="text" style="color: #e3ff04;" placeholder="Seu IMC é:" width="20px;"/>
+                <div class="calcular">
+                <a href="#" onclick="calcular();"  style="color: cyan";>Calcular</a>
+                </div>
+          
+            </form>
+        </div>
+            </div>
+        </body> 
+
+
+
+
+</html>
+
+    
